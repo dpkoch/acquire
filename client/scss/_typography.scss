@@ -1,0 +1,60 @@
+@import 'colors';
+
+@mixin font-body() {
+	font-size: 18px; /* currently ems cause chrome bug misinterpreting rems on body element */
+	line-height: 24px;
+	font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: $text-color;
+}
+
+@mixin font-structure() {
+	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+}
+
+body {
+  @include font-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include font-structure;
+  color: $text-accent-color-primary;
+  margin-top: 0;
+  margin-bottom: 24px;
+  // text-transform: uppercase;
+}
+
+h4, h5, h6 {
+  color: $text-accent-color-secondary;
+}
+
+h5, h6 {
+  text-transform: none;
+}
+
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.00em; }
+h5 { font-size: 0.96em; }
+h6 { font-size: 0.83em; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover, &:focus {
+  	color: $link-hover-color;
+  }
+}
+
+cite {
+  font-style: italic;
+}

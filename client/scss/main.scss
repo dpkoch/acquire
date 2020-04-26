@@ -1,0 +1,243 @@
+@import '_base';
+@import 'colors';
+@import 'typography';
+
+@import 'compass/css3';
+
+body {
+    background: $nord1;
+}
+
+header {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0;
+    background-color: $nord3;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    width: 1054px;
+    padding-bottom: 24px;
+    margin: 0 auto;
+}
+
+footer {
+    min-height: 24px;
+    background-color: $nord2;
+}
+
+#common {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#board {
+    background-color: $nord6;
+    color: $nord0;
+    border: 12px outset $nord4;
+
+    td {
+        width: 66px;
+        height: 66px;
+        text-align: center;
+        vertical-align: middle;
+        border: 2px inset $nord4;
+    }
+
+    .hovered {
+        background-color: $nord4;
+        border-color: $nord3;
+    }
+
+    .occupied {
+        background-color: $nord0;
+        color: $nord6;
+        border-color: $nord0;
+        border-style: outset;
+    }
+
+    @for $i from 0 through 6 {
+        .company#{$i} {
+            background-color: map-get($company_colors, $i);
+            border-color: map-get($company_colors, $i);
+            color: $nord0;
+        }
+    }
+}
+
+#stocks {
+    padding: 0;
+    margin: 0;
+    margin-left: 24px;
+
+    li {
+        color: $nord0;
+        display: block;
+        list-style-type: none;
+        box-sizing: border-box;
+        width: 264px;
+        margin-bottom: 12px;
+        padding: 9px;
+        background-color: $nord5;
+
+        box-shadow: #00000066 2px 2px 10px;
+        border: 2px groove $nord6;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            width: 100%;
+            color: $nord0;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+    }
+
+    @for $i from 0 through 6 {
+        .company#{$i} {
+            background-color: map-get($company_colors, $i);
+        }
+    }
+}
+
+#user {
+    margin-top: 24px;
+    padding: 24px;
+    background-color: $nord2;
+    border: 2px outset $nord6;
+}
+
+#user-cash {
+    p {
+        display: block;
+        width: 264px;
+        height: 96px;
+        line-height: 96px;
+        background-image: url('/images/money.svg');
+
+        text-align: center;
+        font-size: 48px;
+        font-weight: bold;
+
+        box-shadow: #00000066 2px 2px 10px;
+    }
+}
+
+#user-assets {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+// @mixin user-stock-background($fg, $bg) {
+//   background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg viewBox='0 0 156 72' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='156' height='72' fill='%23" + str-slice(inspect($bg), 2) + "'/%3E%3Cpath fill='%23" + str-slice(inspect($fg), 2) + "' d='M 18,9 H 135 a 12 12, 0, 0, 0, 12 12 V 51 a 12 12, 0, 0, 0, -12 12 H 21 a 12 12, 0, 0, 0, -12 -12 V 21 a 12 12, 0, 0, 0, 12 -12 z' /%3E%3C/svg%3E");
+// }
+
+#user-stocks {
+    margin-left: 48px;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-between;
+        align-items: center;
+        min-height: 168px;
+    }
+
+    li {
+        display: block;
+        list-style-type: none;
+
+        margin: 0 8px;
+
+        color: $nord0;
+        font-size: 28px;
+
+        width: 156px;
+        height: 72px;
+        line-height: 72px;
+        background-image: url("/images/stock_mask.svg");
+
+        text-align: center;
+        font-weight: bold;
+
+        box-shadow: #00000066 2px 2px 10px;
+    }
+
+    @for $i from 0 through 6 {
+        .company#{$i} {
+            // @include user-stock-background(map-get($company_colors, $i), $nord4);
+            background-color: map-get($company_colors, $i);
+
+            span {
+                color: fade-out($nord0, 0.5);
+                font-weight: normal;
+            }
+        }
+    }
+
+    // span {
+    //     color: $nord3;
+    //     font-weight: normal;
+    // }
+}
+
+#user-tiles {
+
+    h2 {
+        margin-bottom: 12px;
+    }
+
+    div {
+        text-align: center;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 12px;
+
+        width: 72px;
+        height: 72px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 72px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: $nord2;
+        }
+
+        background-color: $nord0;
+        color: $nord6;
+        border: 2px outset $nord4;
+
+        box-shadow: #00000066 2px 2px 10px;
+    }
+}

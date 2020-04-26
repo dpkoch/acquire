@@ -1,0 +1,65 @@
+$nord0: #2E3440;
+$nord1: #3B4252;
+$nord2: #434C5E;
+$nord3: #4C566A;
+$nord4: #D8DEE9;
+$nord5: #E5E9F0;
+$nord6: #ECEFF4;
+$nord7: #8FBCBB;
+$nord8: #88C0D0;
+$nord9: #81A1C1;
+$nord10: #5E81AC;
+$nord11: #BF616A;
+$nord12: #D08770;
+$nord13: #EBCB8B;
+$nord14: #A3BE8C;
+$nord15: #B48EAD;
+
+$company0_color: $nord10;
+$company1_color: $nord11;
+$company2_color: $nord12;
+$company3_color: $nord13;
+$company4_color: $nord14;
+$company5_color: $nord15;
+$company6_color: $nord7;
+
+$company_colors: (0: $nord10,
+                  1: $nord11,
+                  2: $nord12,
+                  3: $nord13,
+                  4: $nord14,
+                  5: $nord15,
+                  6: $nord7);
+
+// old
+
+$site-title-color: $nord7;
+$site-logo-color: $nord10;
+
+$text-color: $nord6;
+$text-accent-color-primary: $nord7;
+$text-accent-color-secondary: $nord10;
+$text-accent-color-tertiary: $nord4;
+
+$link-color: $nord10;
+$link-hover-color: $nord9;
+
+$nav-link-color: $nord6;
+$nav-link-hover-color: $text-accent-color-primary;
+
+$footer-link-color: $nav-link-color;
+$footer-link-hover-color: $nav-link-hover-color;
+
+$page-title-color: $nord6;
+
+$background-color: $nord0;
+$background-accent-color-primary: $nord1;
+$background-accent-color-secondary: $nord2;
+
+$nav-drawer-icon-color: $nord6;
+$nav-drawer-background-color: $nord2;
+$nav-drawer-separator-color: $nord3;
+$nav-drawer-link-color: $nav-link-color;
+$nav-drawer-link-hover-color: $nav-link-hover-color;
+
+$separator-color: $nord2;
