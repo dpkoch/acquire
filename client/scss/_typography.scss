@@ -55,6 +55,10 @@ a {
   }
 }
 
+button {
+  @include font-body;
+}
+
 cite {
   font-style: italic;
 }

@@ -48,57 +48,66 @@
     <header>
         <h1>Acquire!</h1>
     </header>
-    <main>
-        <div data-ng-app="acquireApp">
-            <div id="common">
-                <table id="board" data-ng-controller="boardCtrl">
-                    <tr data-ng-repeat="row in rows">
-                        <td data-ng-repeat="square in row" id="{{ square.label }}" class="{{ square.class }}" title="{{ square.title }}">{{ square.label }}</td>
-                    </tr>
-                </table>
+    <main data-ng-app="acquireApp">
+        <div id="players">
+            <ul>
+                <li class="self active">Joe</li>
+                <li>Mary</li>
+                <li>Welma</li>
+                <li class="active">Christoff</li>
+            </ul>
+            <a href="/chart.html" target="_blank">Reference Chart</a>
+        </div>
 
-                <ul id="stocks" data-ng-controller="corporationCtrl">
-                    <li data-ng-repeat="corporation in corporations" class="company{{ corporation.id }}">
-                        <h3>{{ corporation.name }}</h3>
-                        <span class="available">Available: {{ corporation.available }}</span><br>
-                        <span class="price">Price: {{ corporation.price }}</span>
-                    </li>
-                </ul>
-            </div>
-
+        <div id="playarea">
             <div id="user">
-                <div id="user-tiles" data-ng-controller="tilesCtrl">
-                    <!-- <h2>Tiles</h2> -->
-                    <div>
-                        <ul>
-                            <li data-ng-repeat="tile in tiles"
-                                data-ng-mouseenter="tile.onMouseIn()"
-                                data-ng-mouseleave="tile.onMouseOut()">{{ tile.id }}</li>
-                        </ul>
-                    </div>
-                </div>
+                <ul id="user-tiles" data-ng-controller="tilesCtrl">
+                    <li data-ng-repeat="tile in tiles" data-ng-mouseenter="tile.onMouseIn()"
+                        data-ng-mouseleave="tile.onMouseOut()">{{ tile.id }}</li>
+                </ul>
 
-                <div id="user-assets">
-                    <div id="user-cash">
-                        <!-- <h2>Cash</h2> -->
-                        <p>$14,200</p>
-                    </div>
+                <p id="user-cash">$14,200</p>
 
-                    <div id="user-stocks">
-                        <!-- <h2>Stocks</h2> -->
-                        <ul>
-                            <li class="company0" title="Techno&#10;Total Value: $2400">8</li>
-                            <li class="company1" title="Gizmo">2</li>
-                            <li class="company2" title="Unicorn">8</li>
-                            <li class="company3" title="DotCom">2</li>
-                            <li class="company4" title="Avago">2</li>
-                            <li class="company5" title="Leaf">2</li>
-                            <li class="company6" title="Progresso">25</li>
-                        </ul>
-                    </div>
-                </div>
+                <ul id="user-stocks">
+                    <li class="company0" title="Techno&#10;Total Value: $2400">8</li>
+                    <li class="company1" title="Gizmo">2</li>
+                    <li class="company2" title="Unicorn">8</li>
+                    <li class="company3" title="DotCom">2</li>
+                    <li class="company4" title="Avago">2</li>
+                    <li class="company5" title="Leaf">2</li>
+                    <li class="company6" title="Progresso">25</li>
+                </ul>
 
+                <button id="endgame">End Game</button>
             </div>
+
+            <table id="board" data-ng-controller="boardCtrl">
+                <tr data-ng-repeat="row in rows">
+                    <td data-ng-repeat="square in row" id="{{ square.label }}" class="{{ square.class }}" title="{{ square.title }}">{{ square.label }}</td>
+                </tr>
+            </table>
+
+            <ul id="stocks" data-ng-controller="corporationCtrl">
+                <li data-ng-repeat="corporation in corporations" class="company{{ corporation.id }}">
+                    <h3>{{ corporation.name }}</h3>
+                    <span class="available">Available: {{ corporation.available }}</span><br>
+                    <span class="price">Price: {{ corporation.price }}</span>
+                </li>
+            </ul>
+        </div>
+
+        <div id="console">
+            <h3>Welma's turn</h3>
+            <p>Placed tile 7C</p>
+            <p>Bought 3 Techno stocks for $300</p>
+
+            <h3>Christoff's turn</h3>
+            <p>Placed tile 7D</p>
+            <p>Formed the Progresso corporation</p>
+            <p>Bought 2 Progresso stocks for $800</p>
+            <p>Bought 1 Techno stock for $300</p>
+
+            <h3>It's your turn</h3>
         </div>
     </main>
 

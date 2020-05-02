@@ -102,7 +102,7 @@ app.controller('boardCtrl', function ($scope, $http) {
 
     $scope.rows[7][7].occupied = true;
     $scope.rows[7][7].company = 0;
-    $scope.rows[7][7].title = 'Techno\nSize: 3\nCannot be merged';
+    $scope.rows[7][7].title = 'Techno\nSize: 3 (safe)';
     $scope.rows[6][7].occupied = true;
     $scope.rows[6][7].company = 0;
     $scope.rows[7][6].occupied = true;
