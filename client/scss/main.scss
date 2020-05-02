@@ -45,6 +45,7 @@ footer {
     background-color: $nord6;
     color: $nord0;
     border: 12px outset $nord4;
+    padding: 2px;
 
     td {
         width: 66px;
@@ -52,6 +53,7 @@ footer {
         text-align: center;
         vertical-align: middle;
         border: 2px inset $nord4;
+        border-radius: 6px;
     }
 
     .hovered {
@@ -237,6 +239,7 @@ footer {
         background-color: $nord0;
         color: $nord6;
         border: 2px outset $nord4;
+        border-radius: 6px;
 
         box-shadow: #00000066 2px 2px 10px;
     }
