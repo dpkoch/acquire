@@ -1,0 +1,37 @@
+@import '_base';
+@import 'colors';
+@import 'typography';
+
+@import 'compass/css3';
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+table {
+    border: 1px solid $nord3;
+}
+
+td, th {
+    border: 1px solid $nord3;
+    padding: 6px 18px;
+    text-align: center;
+}
+
+tr {
+    &:hover {
+        background-color: $nord2;
+
+        th {
+            background-color: $nord1;
+        }
+    }
+}
+
+@for $i from 0 through 6 {
+    .company#{$i} {
+        color: map-get($company_colors, $i);
+    }
+}
